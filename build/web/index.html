@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shortcut icon" href="image/favicon.png" type="image/x-icon" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css"/>
+        <script src="js/sounds.js"></script> 
+        <script src="js/scripts.js"></script> 
+        <link rel="stylesheet" href="css/layout.css"/>
+        <script src="js/muteUnmute.js"></script> 
+        <title>Go Dreamland</title>
+
+
+    </head>
+    <body style="margin:0;background-image: linear-gradient(#67b26f 10%,#4ca2cd);">
+        <div  class=""style="">
+            <div class="operation">
+                <ul class="operationlist">
+                    <li>
+                        <a  class="formButton" name="login" href="login.html">Login</a>
+                    </li>
+                    <li>
+                        <input type="button"  id="about"name="signup"class="formButton" value="SignUp">
+                        <a name="about" id="about" class="formButton"href="#aboutPage">?</a>
+
+                        <script>
+                            type = "text/javascript" >
+                                    jQuery('.about').click(function (e) {
+                                var jump = $(this).attr('href');
+                                var new_position = $(jump).offset();
+                                $('html, body').stop().animate({scrollTop: new_position.top}, 500);
+                                e.preventDefault();
+                            });
+                        </script>
+                    </li>
+                </ul>
+            </div>
+            <img  class="volumeButton" id="volumeImg" onclick="setImage()" src="image/unmute.png"/>
+            <center>
+                <h2>Choose the desired sound and try to enjoy it</h2>
+                <button class="formButton">Remix</button>
+                <button class="formButton"onclick="editorChoice()">Editor Choice</button>
+            </center>
+
+            <ul class="leftButton">
+                <li><img src="image/autumn.png"/></li>
+                <li><img src="image/autumn.png"/></li>
+                <li><img src="image/autumn.png"/></li>
+                <li><img src="image/autumn.png"/></li>
+                <li><img src="image/autumn.png"/></li>
+                <li><img src="image/autumn.png"/></li>
+            </ul>
+            <ul class="rightButton">
+                <li><img src="image/fire.png"/></li>
+                <li><img src="image/fire.png"/></li>
+                <li><img src="image/fire.png"/></li>
+                <li><img src="image/fire.png"/></li>
+                <li><img src="image/fire.png"/></li>
+                <li><img src="image/fire.png"/></li>
+            </ul>
+
+            <!--            <center>
+                            <img src="image/cloud.png" class="media"id="cloud" style="width: 150px;padding: 100px;cursor:pointer"  onclick="playRain()"/>
+            
+                            <img src="image/thunderstorm.png" class="media" id="thunder" style="width: 150px;padding: 100px;cursor:pointer" onclick="playThunder()"/>
+            
+                            <img src="image/mill.png" id="mill" class="media" style="width: 150px;padding: 100px;cursor:pointer" onclick="playMill()"/>
+            
+                            <img src="image/forest.png" id="forest" class="media" style="width: 150px;padding: 100px;cursor:pointer" onclick="playForest()"/>
+            
+                            <img src="image/river.png" id="river" class="media" style="width: 150px;padding: 100px;cursor:pointer" onclick="playRiver()"/>
+            
+                            <img src="image/ocean.png" id="ocean" class="media" style="width: 150px;padding: 100px;cursor:pointer" onclick="playWave()"/>
+            
+                            <img src="image/fire.png" id="fire" class="media" style="width: 150px;padding: 100px;cursor:pointer" onclick="playFire()"/>
+            
+                            <img src="image/wind.png" id="wind" class="media" style="width: 150px;padding: 100px;cursor:pointer" onclick="playWind()"/>
+            
+                            <img src="image/train.png" id="train"  class="media"style="width: 150px;padding: 100px;cursor:pointer" onclick="playTrain()"/>
+            
+                            <img src="image/night.png" id="night" class="media" style="width: 150px;padding: 100px;cursor:pointer" onclick="playNight()"/>
+            
+                            <img src="image/autumn.png" id="autumn" class="media" style="width: 150px;padding: 100px;cursor:pointer" onclick="playLeaves()"/>
+            
+                            <img src="image/coffeBreak.png" id="ceffebreak"  class="media"style="width: 150px;padding: 100px;cursor:pointer" onclick="playCoffeBreak()"/>
+                        </center>
+                        <br> <br> <br> <br>
+                        <span>
+                            <audio id="rainaud">
+                                <source src="audio/rain.mp3" type='audio/mpeg; codecs="mp3"'></source>
+                            </audio>
+            
+                            <audio id="thunderaud">
+                                <source src="audio/thunder.mp3" type='audio/mpeg; codecs="mp3"'></source>
+                            </audio>
+            
+                            <audio id="millaud">
+                                <source src="audio/mill.mp3" type='audio/mpeg; codecs="mp3"'></source>
+                            </audio>
+            
+                            <audio id="forestaud">
+                                <source src="audio/forest.mp3" type='audio/mpeg; codecs="mp3"'></source>
+                            </audio>
+            
+                            <audio id="fireaud">
+                                <source src="audio/fire.mp3" type='audio/mpeg; codecs="mp3"'></source>
+                            </audio>
+                            <audio id="riveraud">
+                                <source src="audio/river.mp3" type='audio/mpeg; codecs="mp3"'></source>
+                            </audio>
+            
+                            <audio id="waveaud">
+                                <source src="audio/wave.mp3" type='audio/mpeg; codecs="mp3"'></source>
+                            </audio>
+            
+                            <audio id="windaud">
+                                <source src="audio/wind.mp3" type='audio/mpeg; codecs="mp3"'></source>
+                            </audio>
+            
+                            <audio id="trainaud">
+                                <source src="audio/train.mp3" type='audio/mpeg; codecs="mp3"'></source>
+                            </audio>
+            
+                            <audio id="nightaud">
+                                <source src="audio/night.mp3" type='audio/mpeg; codecs="mp3"'></source>
+                            </audio>
+            
+                            <audio id="leavesaud">
+                                <source src="audio/leaves.mp3" type='audio/mpeg; codecs="mp3"'></source>
+                            </audio>
+            
+                            <audio id="coffebreakaud">
+                                <source src="audio/coffebreak.mp3" type='audio/mpeg; codecs="mp3"'></source>
+                            </audio>
+                        </span>
+                        <div>
+                            <footer style="background: darkgray;">
+                                <br/>
+                                <center> <div class="aboutMeDiv">
+                                        <h3>About Me:</h3>
+                                        <a href="aboutPage"></a>
+            
+                                        <ul class="footerUl">
+                                            <li>
+                                                <a href="https://www.facebook.com/mirzayev.goshgar"><i class="fa fa-facebook" style="font-size:36px;"></i></a>   
+                                            </li>
+                                            <li>
+                                                <a href="https://github.com/jgoshgarmirzayev"><i class="fa fa-github" style="font-size:36px;"></i> </a>    
+                                            </li>
+                                            <li>
+                                                <a href="https://www.linkedin.com/in/qoshqar-mirzayev-877656155/"><i class="fa fa-linkedin" style="font-size:36px;"></i></a>  
+                                            </li>
+                                            <li>
+                                                <a href="https://plus.google.com/118178274643330721250"><i class="fa fa-google-plus" style="font-size:36px;"></i></a> 
+                                            </li>
+                                        </ul>
+            
+                                    </div>
+                                </center>
+            
+            
+                                <center>
+                                    <form><h3>Enter Your Email And Catch Update News<h3/>
+                                            <input type="email" placeholder="example@gmail.com" class="emailInput" required=""/>
+                                            <input type="submit" class="formButton"value="Submit"/>
+                                    </form>
+            
+            
+                                    <h5 >&COPY;Goshgar Mirzayev 2018</h5>
+                                </center>
+                            </footer>
+            
+            
+            
+                        </div>
+                    </div>-->
+            <style>
+                .footerUl {
+                    align-self: center;
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 10px;
+                    overflow: hidden;
+
+                }
+
+                .footerUl li {
+
+                    display: inline-block;
+                }
+
+                .footerUl li a {
+                    display: block;
+                    color: white;
+                    text-align: center;
+                    padding: 16px;
+                    text-decoration: none;
+                }
+                .footerUl li a:hover {
+                    background-color: #111111;
+                }
+            </style>
+
+        </div>
+    </body>
+
+</html>

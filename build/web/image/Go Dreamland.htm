@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+        <link rel="shortcut icon" href="http://localhost:8080/az.soundSnap/image/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="Go%20Dreamland_files/font-awesome.css">
+        <link rel="stylesheet" href="Go%20Dreamland_files/style.css">
+        <script src="Go%20Dreamland_files/sounds.js"></script> 
+        <script src="Go%20Dreamland_files/jquery.js"></script>
+        <script src="Go%20Dreamland_files/muteUnmute.js"></script> 
+        <title>Go Dreamland</title>
+    </head>
+    <body style="margin:0;background-image: linear-gradient(#67b26f 10%,#4ca2cd);">
+        <div class="" style="">
+            <div class="operation">
+                <ul class="operationlist">
+                    <li>
+                        <input class="formButton" name="login" value="Login" type="button">
+                    </li>
+                    <li>
+                        <input id="about" name="signup" class="formButton" value="SignUp" type="button">
+                        <input name="about" onclick="$()" class="formButton" value="?" type="submit">
+                    </li>
+                </ul>
+            </div>
+            <img class="volumeButton" id="volumeImg" onclick="setImage()" src="Go%20Dreamland_files/unmute.png">
+            <center>
+                <h2>Choose the desired sound and try to enjoy it</h2>
+                <button class="formButton">Remix</button>
+                <button class="formButton" onclick="editorChoice()">Editor Choice</button>
+            </center>
+            <center>
+                <img src="Go%20Dreamland_files/cloud.png" class="media" id="cloud" style="width: 150px;padding: 100px;cursor:pointer" onclick="playRain()">
+
+                <img src="Go%20Dreamland_files/thunderstorm.png" class="media" id="thunder" style="width: 150px;padding: 100px;cursor:pointer" onclick="playThunder()">
+
+                <img src="Go%20Dreamland_files/mill.png" id="mill" class="media" style="width: 150px;padding: 100px;cursor:pointer" onclick="playMill()">
+
+                <img src="Go%20Dreamland_files/forest.png" id="forest" class="media" style="width: 150px;padding: 100px;cursor:pointer" onclick="playForest()">
+
+                <img src="Go%20Dreamland_files/river.png" id="river" class="media" style="width: 150px;padding: 100px;cursor:pointer" onclick="playRiver()">
+
+                <img src="Go%20Dreamland_files/ocean.png" id="ocean" class="media" style="width: 150px;padding: 100px;cursor:pointer" onclick="playWave()">
+
+                <img src="Go%20Dreamland_files/fire.png" id="fire" class="media" style="width: 150px;padding: 100px;cursor:pointer" onclick="playFire()">
+
+                <img src="Go%20Dreamland_files/wind.png" id="wind" class="media" style="width: 150px;padding: 100px;cursor:pointer" onclick="playWind()">
+
+                <img src="Go%20Dreamland_files/train.png" id="train" class="media" style="width: 150px;padding: 100px;cursor:pointer" onclick="playTrain()">
+
+                <img src="Go%20Dreamland_files/night.png" id="night" class="media" style="width: 150px;padding: 100px;cursor:pointer" onclick="playNight()">
+
+                <img src="Go%20Dreamland_files/autumn.png" id="autumn" class="media" style="width: 150px;padding: 100px;cursor:pointer" onclick="playLeaves()">
+
+                <img src="Go%20Dreamland_files/coffeBreak.png" id="ceffebreak" class="media" style="width: 150px;padding: 100px;cursor:pointer" onclick="playCoffeBreak()">
+            </center>
+            <br> <br> <br> <br>
+            <span>
+                <audio id="rainaud">
+                    <source src="Go%20Dreamland_files/rain.mp3" type="audio/mpeg; codecs=&quot;mp3&quot;">
+                </audio>
+
+                <audio id="thunderaud">
+                    <source src="Go%20Dreamland_files/thunder.mp3" type="audio/mpeg; codecs=&quot;mp3&quot;">
+                </audio>
+
+                <audio id="millaud">
+                    <source src="Go%20Dreamland_files/mill.mp3" type="audio/mpeg; codecs=&quot;mp3&quot;">
+                </audio>
+
+                <audio id="forestaud">
+                    <source src="Go%20Dreamland_files/forest.mp3" type="audio/mpeg; codecs=&quot;mp3&quot;">
+                </audio>
+
+                <audio id="fireaud">
+                    <source src="Go%20Dreamland_files/fire.mp3" type="audio/mpeg; codecs=&quot;mp3&quot;">
+                </audio>
+                <audio id="riveraud">
+                    <source src="Go%20Dreamland_files/river.mp3" type="audio/mpeg; codecs=&quot;mp3&quot;">
+                </audio>
+
+                <audio id="waveaud">
+                    <source src="Go%20Dreamland_files/wave.mp3" type="audio/mpeg; codecs=&quot;mp3&quot;">
+                </audio>
+
+                <audio id="windaud">
+                    <source src="Go%20Dreamland_files/wind.mp3" type="audio/mpeg; codecs=&quot;mp3&quot;">
+                </audio>
+
+                <audio id="trainaud">
+                    <source src="Go%20Dreamland_files/train.mp3" type="audio/mpeg; codecs=&quot;mp3&quot;">
+                </audio>
+
+                <audio id="nightaud">
+                    <source src="Go%20Dreamland_files/night.mp3" type="audio/mpeg; codecs=&quot;mp3&quot;">
+                </audio>
+
+                <audio id="leavesaud">
+                    <source src="Go%20Dreamland_files/leaves.mp3" type="audio/mpeg; codecs=&quot;mp3&quot;">
+                </audio>
+
+                <audio id="coffebreakaud">
+                    <source src="Go%20Dreamland_files/coffebreak.mp3" type="audio/mpeg; codecs=&quot;mp3&quot;">
+                </audio>
+            </span>
+            <div>
+                <footer style="background: darkgray;">
+                    <br>
+                    <h3>About Me:</h3>
+                    <a href="#" id="aboutPage" style="display: block;"></a>
+                    <ul class="footerUl">
+                        <li>
+                            <a href="https://www.facebook.com/mirzayev.goshgar"><i class="fa fa-facebook" style="font-size:36px;"></i></a>   
+                        </li>
+                        <li>
+                            <a href="https://github.com/jgoshgarmirzayev"><i class="fa fa-github" style="font-size:36px;"></i> </a>    
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/qoshqar-mirzayev-877656155/"><i class="fa fa-linkedin" style="font-size:36px;"></i></a>  
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/118178274643330721250"><i class="fa fa-google-plus" style="font-size:36px;"></i></a> 
+                        </li>
+                    </ul>
+
+                    <center>
+                        <form><h3>Enter Your Email And Catch Update News</h3><h3>
+                                <input placeholder="example@gmail.com" class="emailInput" required="" type="email">
+                                <input class="formButton" value="Submit" type="submit">
+                        
+
+
+                        </h3></form><h5>©Goshgar Mirzayev 2018</h5>
+                    </center>
+                </footer>
+
+
+
+            </div>
+        </div>
+        <style>
+            .footerUl {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+
+            }
+
+            .footerUl li {
+                float: left;  
+
+            }
+
+            .footerUl li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 16px;
+                text-decoration: none;
+            }
+            .footerUl li a:hover {
+                background-color: #111111;
+            }
+        </style>
+        <script>
+            $("#about").click(function () {
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $("#aboutPage").offset().top
+                }, 2000);
+            });
+        </script>
+    
+
+
+</body></html>
